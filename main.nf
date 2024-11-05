@@ -191,13 +191,15 @@ process benchmark_consolidation {
         def fullConsolidatedResultPath = consolidated_result.toString()
         def fullDefaultConsolidatedResultPath = DEFAULT_CONSOLIDATED_RESULT.toString()
         return fullConsolidatedResultPath == fullDefaultConsolidatedResultPath ? null : consolidated_result.name
-	}
+    }
 
-	input:
+	input:	
+
 	path ass_json
 	val event_id
-	path validation_file
+	path outdir
 	path template_path
+	path validation_file
 	val challenges_ids
 	path consolidated_result
 	
@@ -206,7 +208,7 @@ process benchmark_consolidation {
 	
 	"""
 	python /app/aggregation.py -a $ass_json -e $event_id -o $outdir -t $template_path
-	python /app/merge_data_model_files.py -v $validation_file -m $ass_json -c $challenges_ids -a $outdir -o $consolidated_result
+	python /app/merge_data_model_files.py -m $ass_json -v $validation_file -c $challenges_ids -a $outdir -o $consolidated_result
 	"""
 
 }
@@ -241,8 +243,9 @@ workflow {
 	benchmark_consolidation(
 		assessments,
 		event_id,
-		validations,
+		outdir,
 		template_path,
+		validations,
 		challenges_ids,
 		consolidated_result
 	)
