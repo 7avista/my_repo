@@ -102,7 +102,7 @@ process validation {
 	mode: 'copy',
 	overwrite: false,
     saveAs: { filename -> 
-		def DEFAULT_VALIDATION_RESULT = "${params.outdir}/validated_participant_data.json"
+		def DEFAULT_VALIDATION_RESULT = "${params.outdir}/validated_result.json"
         // Convert both paths to absolute paths for comparison
 		def fullValidationResultPath = validation_result.toString()
         def fullDefaultValidationResultPath = DEFAULT_VALIDATION_RESULT.toString()
@@ -120,7 +120,7 @@ process validation {
 	path goldstandard_dir
 	
 	output:
-    path "validated_participant_data.json", emit: validation_file
+    path "validated_result.json", emit: validation_file
 	val task.exitStatus, emit: validation_status
 			
 	"""
@@ -136,14 +136,14 @@ process compute_metrics {
 	publishDir outdir,
 	mode: 'copy',
 	overwrite: false,
-    saveAs: { filename -> "assessment_datasets.json" }
+    saveAs: { filename -> "assessment_results.json" }
 
     // Publish assessment_results copy in OEB VRE only
 	publishDir assessment_results.parent,
 	mode: 'copy',
 	overwrite: false,
 	saveAs: { filename -> 
-		def DEFAULT_ASSESSMENT_RESULTS = "${params.outdir}/assessment_datasets.json"
+		def DEFAULT_ASSESSMENT_RESULTS = "${params.outdir}/assessment_results.json"
 		// Convert both paths to absolute paths for comparison
         def fullAssessmentResultsPath = assessment_results.toString()
         def fullDefaultAssessmentResultsPath = DEFAULT_ASSESSMENT_RESULTS.toString()
@@ -161,7 +161,7 @@ process compute_metrics {
 	path assessment_results
 
 	output:
-    path "assessment_datasets.json", emit: ass_json
+    path "assessment_results.json", emit: ass_json
 	
 	when:
 	validation_status == 0
@@ -245,7 +245,7 @@ workflow {
 		event_id,
 		outdir,
 		template_path,
-		validations,
+		validation_result,
 		challenges_ids,
 		consolidated_result
 	)
