@@ -1,0 +1,86 @@
+[
+    {
+        "_id": "ID",
+        "challenges_ids": [
+            
+        ],
+        "datalink": {
+            "inline_data": {
+                "challenge_participants": [],
+                "visualization": {
+                    "type": "bar-plot",
+                    "metric": "dsc_10.0"
+                }
+            }
+        },
+        "type": "aggregation"
+    },
+    {
+        "_id": "ID",
+        "challenges_ids": [
+            
+        ],
+        "datalink": {
+            "inline_data": {
+                "challenge_participants": [],
+                "visualization": {
+                    "type": "bar-plot",
+                    "metric": "dsc_8.0"
+                }
+            }
+        },
+        "type": "aggregation"
+    },
+        {
+        "_id": "ID",
+        "challenges_ids": [
+            
+        ],
+        "datalink": {
+            "inline_data": {
+                "challenge_participants": [],
+                "visualization": {
+                    "type": "bar-plot",
+                    "metric": "dsc_3.0"
+                }
+            }
+        },
+        "type": "aggregation"
+    },
+    {
+        "_id": "ID",
+        "challenges_ids": [
+            
+        ],
+        "datalink": {
+            "inline_data": {
+                "challenge_participants": [],
+                "visualization": {
+                    "type": "2D-plot",
+                    "x_axis": "dsc_0.0",
+                    "y_axis": "dsc_2.0",
+                    "optimization": "top-left"
+                }
+            }
+        },
+        "type": "aggregation"
+    },
+    {
+        "_id": "ID",
+        "challenges_ids": [
+            
+        ],
+        "datalink": {
+            "inline_data": {
+                "challenge_participants": [],
+                "visualization": {
+                    "type": "2D-plot",
+                    "x_axis": "dsc_4.0",
+                    "y_axis": "dsc_5.0",
+                    "optimization": "bottom-right"
+                }
+            }
+        },
+        "type": "aggregation"
+    }
+]
