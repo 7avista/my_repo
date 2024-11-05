@@ -95,7 +95,7 @@ process validation {
 	publishDir outdir,
 	mode: 'copy',
 	overwrite: false,
-    saveAs: { filename -> "validated_participant_data.json" }
+    saveAs: { filename -> "validated_result.json" }
 
     // Publish validation_result copy in OEB VRE only
 	publishDir validation_result.parent,
