@@ -120,7 +120,7 @@ def main(args):
     # Once validated; emit the validation file
     # Create the output path filename using the input file's basename
     #output_filename = f"validated_{os.path.basename(input_file).replace('.gz', '')}.json"
-    output_filename = f"validated_participant_data.json"
+    output_filename = f"validated_result.json"
 
     data_id = f"{community}:{event}_{participant_id}" 
     validated = True
