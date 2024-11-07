@@ -85,8 +85,8 @@ def join_json_files(data_directory, data_model_file, file_extension):
 if __name__ == '__main__':
 
     parser = ArgumentParser()
-    parser.add_argument("-v", "--validation_data", nargs="+", help="path to validated_participant_data.json", required=True)
-    parser.add_argument("-m", "--metrics_data", nargs="+", help="path to assessment_datasets.json", required=True)
+    parser.add_argument("-v", "--validation_data", nargs="+", help="path to validated_result.json", required=True)
+    parser.add_argument("-m", "--metrics_data", nargs="+", help="path to assessment_results.json", required=True)
     parser.add_argument("-c", "--challenges_ids", help="Ids of the challenges, separated by space", nargs='+', required=True)
     parser.add_argument("-a", "--outdir", help="output path where the minimal dataset JSON file will be written", required=True)
     parser.add_argument("-o", "--consolidated_result", help="Path to the consolidated result JSON file", required=True)
